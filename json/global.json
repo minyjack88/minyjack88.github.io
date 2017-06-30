@@ -1,0 +1,93 @@
+{
+    "debugDraw": false,
+    "editorJson": {
+        "active": false,
+        "height": 500
+    },
+    "dropAreaPositions": [
+        {
+            "x": 100,
+            "y": 100
+        },
+        {
+            "x": 250,
+            "y": 100
+        },
+        {
+            "x": 400,
+            "y": 100
+        },
+        {
+            "x": 550,
+            "y": 100
+        },
+        {
+            "x": 700,
+            "y": 100
+        }
+    ],
+    "homePositions": [
+        {
+            "x": 100,
+            "y": 500
+        },
+        {
+            "x": 200,
+            "y": 500
+        },
+        {
+            "x": 300,
+            "y": 500
+        },
+        {
+            "x": 400,
+            "y": 500
+        },
+        {
+            "x": 500,
+            "y": 500
+        },
+        {
+            "x": 600,
+            "y": 500
+        },
+        {
+            "x": 700,
+            "y": 500
+        }
+    ],
+    "numbers": [
+        {
+            "numberValue": 10
+        },
+        {
+            "numberValue": 30
+        },
+        {
+            "numberValue": 30
+        },
+        {
+            "numberValue": 40
+        }
+    ],
+    "symbols": [
+        {
+            "symbolValue": "+"
+        },
+        {
+            "symbolValue": "*"
+        },
+        {
+            "symbolValue": "-"
+        }
+    ],
+    "fullScreen": false,
+    "ResHeight": 540,
+    "ResWidth": 960,
+    "startingArea": {
+        "width": 900,
+        "height": 200,
+        "x": -450,
+        "y": 100
+    }
+}
