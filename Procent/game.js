@@ -666,6 +666,9 @@ var BaseLevel = (function (_super) {
         _this.animatedBackgroundObjects = [];
         _this.backgroundFromButtom = [];
         _this.backgroundFromTop = [];
+        _this.backgroundFromRight = [];
+        _this.backgroundFromLeft = [];
+        _this.backgroundFromBottomNoDelay = [];
         _this.levelWon = false;
         _this.test = 0;
         return _this;
@@ -752,7 +755,6 @@ var BaseLevel = (function (_super) {
     };
     BaseLevel.prototype.AddGroups = function () {
         this.background = this.game.add.group();
-        this.particles = this.game.add.group();
         this.clickSpawner = this.game.add.group();
         this.baskets = this.game.add.group();
         this.blobs = this.game.add.group();
@@ -801,30 +803,25 @@ var BaseLevel = (function (_super) {
         this.cannotSpawnIcon.alpha = 0.5;
         this.levelGUI.add(this.canSpawnIcon);
         this.levelGUI.add(this.cannotSpawnIcon);
+        var lvlsInARow = LevelTracker.GetLevelsCompletedInARow();
         // Slide the baskets into the playing field.
         this.baskets.position.set(1000, 0);
+        var delay = 0;
+        // wait for lvl build animation.
+        if (lvlsInARow === 0)
+            delay = 2000;
+        else
+            delay = 0;
         var basketsTween = this.baskets.game.add.tween(this.baskets).
-            to({ x: 0 }, 3500, Phaser.Easing.Exponential.Out, true);
-        var lvlsInARow = LevelTracker.GetLevelsCompletedInARow();
+            to({ x: 0 }, 2000, Phaser.Easing.Exponential.Out, true, delay);
         //Run the world build animation if player came from menu.
         if (lvlsInARow === 0) {
-            this.buildWorldLevel(undefined, this.backgroundFromButtom, undefined, undefined, this.backgroundFromTop);
+            this.buildWorldLevel(undefined, this.backgroundFromButtom, this.backgroundFromRight, this.backgroundFromLeft, this.backgroundFromTop, this.backgroundFromBottomNoDelay);
         }
     };
     BaseLevel.prototype.BuildBackground = function () {
         //let spriteKey =  "backgroundFront"; //(this.levelInfo.Settings.backgroundSpriteKey == "default") ? "background" : this.levelInfo.Settings.backgroundSpriteKey;  
-        this.leafParticle = this.game.add.emitter(500, 0, 6);
-        this.leafParticle.minParticleSpeed.setTo(-160, 265);
-        this.leafParticle.maxParticleSpeed.setTo(-100, 280);
-        this.leafParticle.minParticleScale = 0.2;
-        this.leafParticle.maxParticleScale = 0.3;
-        this.leafParticle.width = 1200;
-        this.leafParticle.particleDrag.set(45, 185);
-        this.leafParticle.maxRotation = -220;
-        this.leafParticle.minRotation = 150;
-        this.leafParticle.angularDrag = 65;
-        this.leafParticle.makeParticles(["leaf2", "leaf1"]);
-        this.leafParticle.flow(4000, 1300, 1, -1, true);
+        this.setUpLeafParticle();
         var backgroundFront = this.game.add.sprite(0, 0, "backgroundFront");
         backgroundFront.z = 0;
         var backgroundTree = this.game.add.sprite(30, 111, "backgroundTree");
@@ -855,8 +852,25 @@ var BaseLevel = (function (_super) {
         this.background.add(this.leafParticle);
         this.background.add(backgroundTreeFront);
         this.background.add(mathman);
-        this.backgroundFromButtom = [backgroundFront, background1, background2];
-        this.backgroundFromTop = [backgroundTree, backgroundTreeFront, mathman];
+        this.backgroundFromButtom = [background1, background2];
+        this.backgroundFromTop = [backgroundTreeFront];
+        this.backgroundFromRight = [];
+        this.backgroundFromLeft = [];
+        this.backgroundFromBottomNoDelay = [backgroundTree, mathman, backgroundFront];
+    };
+    BaseLevel.prototype.setUpLeafParticle = function () {
+        this.leafParticle = this.game.add.emitter(500, 0, 6);
+        this.leafParticle.minParticleSpeed.setTo(-160, 265);
+        this.leafParticle.maxParticleSpeed.setTo(-100, 280);
+        this.leafParticle.minParticleScale = 0.2;
+        this.leafParticle.maxParticleScale = 0.3;
+        this.leafParticle.width = 1200;
+        this.leafParticle.particleDrag.set(45, 185);
+        this.leafParticle.maxRotation = -220;
+        this.leafParticle.minRotation = 150;
+        this.leafParticle.angularDrag = 65;
+        this.leafParticle.makeParticles(["leaf2", "leaf1"]);
+        this.leafParticle.flow(4000, 2300, 1, -1, false);
     };
     BaseLevel.prototype.GetSpawner = function () {
         return this.clickSpawner.children[0];
@@ -914,11 +928,11 @@ var BaseLevel = (function (_super) {
         for (var i = 0; i < baskets.length; i++) {
             //There is another basket after this one
             if (i + 1 < baskets.length) {
-                console.log("chained baskets");
+                // console.log("chained baskets");
                 baskets[i].SetBasketProg(baskets[i + 1]);
             }
             else {
-                console.log("set win prog");
+                // console.log("set win prog");
                 baskets[i].SetWinProg(this.OnWin);
             }
         }
@@ -941,73 +955,82 @@ var BaseLevel = (function (_super) {
             console.log("Max level reached!");
         }
     };
-    BaseLevel.prototype.buildWorldLevel = function (spritesToFadeIn, spritesToBuildFromBottom, spritesToBuildFromRight, spritesToBuildFromLeft, spritesToBuildFromAbove) {
+    BaseLevel.prototype.buildWorldLevel = function (spritesToFadeIn, fromBottom, fromRight, fromLeft, fromAbove, fromBottomNoDelay) {
         var _this = this;
         var delayMod = 400;
         var reductionMod = 20;
         var reductionFactor = 0;
         var delay = 0;
-        if (spritesToBuildFromBottom) {
-            spritesToBuildFromBottom.forEach(function (sprite) {
+        if (fromBottom) {
+            fromBottom.forEach(function (sprite) {
                 var oldPos = sprite.position.y;
                 sprite.position.set(sprite.position.x, _this.game.height);
                 var spriteTween = sprite.game.add.tween(sprite).
-                    to({ y: oldPos }, 300, Phaser.Easing.Circular.Out, true, delay);
+                    to({ y: oldPos }, 1000, Phaser.Easing.Circular.Out, true, delay);
                 delay += delayMod - reductionFactor;
                 reductionFactor += reductionMod;
             });
         }
-        delay += delayMod - reductionFactor;
-        reductionFactor += reductionMod;
-        if (spritesToBuildFromRight) {
-            spritesToBuildFromRight.forEach(function (sprite) {
-                var oldPos = sprite.position.x;
-                sprite.position.set(_this.game.width, sprite.position.y);
+        delay += 1000;
+        if (fromBottomNoDelay) {
+            fromBottomNoDelay.forEach(function (sprite) {
+                var oldPos = sprite.position.y;
+                sprite.position.set(sprite.position.x, _this.game.height + 1000);
                 var spriteTween = sprite.game.add.tween(sprite).
-                    to({ x: oldPos }, 300, Phaser.Easing.Circular.Out, true, delay);
-                delay += delayMod - reductionFactor;
-                reductionFactor += reductionMod;
+                    to({ y: oldPos }, 1000, Phaser.Easing.Circular.Out, true, delay);
             });
         }
         delay += delayMod - reductionFactor;
         reductionFactor += reductionMod;
-        if (spritesToBuildFromLeft) {
-            spritesToBuildFromLeft.forEach(function (sprite) {
-                var oldPos = sprite.position.x;
-                sprite.position.set(-_this.game.width - sprite.width, sprite.position.y);
-                var spriteTween = sprite.game.add.tween(sprite).
-                    to({ x: oldPos }, 300, Phaser.Easing.Circular.Out, true, delay);
-                delay += delayMod - reductionFactor;
-                reductionFactor += reductionMod;
-            });
-        }
-        delay += delayMod - reductionFactor;
-        reductionFactor += reductionMod;
-        if (spritesToBuildFromAbove) {
-            spritesToBuildFromAbove.forEach(function (sprite) {
+        if (fromAbove) {
+            fromAbove.forEach(function (sprite) {
                 var oldPos = sprite.position.y;
                 sprite.position.set(sprite.position.x, -_this.game.height);
                 var spriteTween = sprite.game.add.tween(sprite).
-                    to({ y: oldPos }, 2500, Phaser.Easing.Exponential.Out, true);
-                /*
+                    to({ y: oldPos }, 1000, Phaser.Easing.Exponential.Out, true, delay);
                 delay += delayMod - reductionFactor;
                 reductionFactor += reductionMod;
-                */
             });
         }
+        delay += delayMod - reductionFactor;
+        reductionFactor += reductionMod;
+        if (fromRight) {
+            fromRight.forEach(function (sprite) {
+                var oldPos = sprite.position.x;
+                sprite.position.set(_this.game.width, sprite.position.y);
+                var spriteTween = sprite.game.add.tween(sprite).
+                    to({ x: oldPos }, 1000, Phaser.Easing.Circular.Out, true, delay);
+                delay += delayMod - reductionFactor;
+                reductionFactor += reductionMod;
+            });
+        }
+        delay += delayMod - reductionFactor;
+        reductionFactor += reductionMod;
+        if (fromLeft) {
+            fromLeft.forEach(function (sprite) {
+                var oldPos = sprite.position.x;
+                sprite.position.set(-_this.game.width - sprite.width, sprite.position.y);
+                var spriteTween = sprite.game.add.tween(sprite).
+                    to({ x: oldPos }, 1000, Phaser.Easing.Circular.Out, true, delay);
+                delay += delayMod - reductionFactor;
+                reductionFactor += reductionMod;
+            });
+        }
+        delay += delayMod - reductionFactor;
+        reductionFactor += reductionMod;
     };
     BaseLevel.prototype.slideBasketsAnimation = function (functionToRunOnComplete) {
         if (functionToRunOnComplete) {
             var blobsTween = this.blobs.game.add.tween(this.blobs).
-                to({ x: -1000 }, 1000, Phaser.Easing.Circular.Out, true, 1000);
+                to({ x: -1000 }, 1500, Phaser.Easing.Exponential.In, true, 1000);
             var basketsTween = this.baskets.game.add.tween(this.baskets).
-                to({ x: -1000 }, 1000, Phaser.Easing.Circular.Out, true, 1000).onComplete.addOnce(functionToRunOnComplete);
+                to({ x: -1000 }, 1500, Phaser.Easing.Exponential.In, true, 1000).onComplete.addOnce(functionToRunOnComplete);
         }
         else {
             var blobsTween = this.blobs.game.add.tween(this.blobs).
-                to({ x: -1000 }, 1000, Phaser.Easing.Circular.Out, true, 1000);
+                to({ x: -1000 }, 1500, Phaser.Easing.Exponential.In, true, 1000);
             var basketsTween = this.baskets.game.add.tween(this.baskets).
-                to({ x: -1000 }, 1000, Phaser.Easing.Circular.Out, true, 1000);
+                to({ x: -1000 }, 1500, Phaser.Easing.Exponential.In, true, 1000);
         }
     };
     return BaseLevel;
