@@ -415,15 +415,21 @@ var Basket = (function (_super) {
         }
         else {
             if (this.winProg != undefined || this.winProg != null) {
-                this.game.time.events.add(LevelHandler.GetGlobalSettings().afterBasketSolveWaitTimeInMilliseconds, this.winProg, this);
+                this.level.slideBasketsAnimation(newLevel.bind(this));
             }
             else {
                 this.game.time.events.add(LevelHandler.GetGlobalSettings().nextBasketSolveWaitTimeInMilliseconds, this.SolveNextBasket, this);
             }
         }
+        function newLevel(instance) {
+            instance.game.time.events.add(LevelHandler.GetGlobalSettings().afterBasketSolveWaitTimeInMilliseconds, this.winProg, this);
+        }
     };
     Basket.prototype.IncrementLabelText = function () {
         this.SetCurrentBasketFrontText(this.currentBasketFrontTextIndex + 1);
+    };
+    Basket.prototype.setTextPosition = function (x, y) {
+        this.percentageText.position.set(x, y);
     };
     return Basket;
 }(GameObject));
@@ -689,18 +695,32 @@ var BaseLevel = (function (_super) {
         }
         if (this.animatedBackgroundObjects[0] !== undefined && this.animatedBackgroundObjects[0] !== null) {
             var index_1 = 0;
+            var objectInFront_1 = 0;
             this.animatedBackgroundObjects.forEach(function (element) {
                 if (index_1 >= _this.animatedBackgroundObjects.length) {
                     index_1 = 0;
                 }
-                element.position.set(element.position.x - 0.2, _this.game.height - element.height + (Math.sin(_this.game.time.now / 2200) * 8));
+                element.position.set(element.position.x - 0.5, _this.game.height - element.height + (Math.sin(_this.game.time.now / 2200) * 15));
                 if (element.position.x + element.width <= 0) {
-                    element.position.set(_this.animatedBackgroundObjects[index_1 + 1].position.x + _this.animatedBackgroundObjects[index_1 + 1].width, _this.game.height - element.height);
+                    if (index_1 === 1) {
+                        element.position.set(_this.animatedBackgroundObjects[0].position.x + _this.animatedBackgroundObjects[0].width, element.position.y);
+                        objectInFront_1 = 0;
+                    }
+                    else if (index_1 === 0) {
+                        element.position.set(_this.animatedBackgroundObjects[1].position.x + _this.animatedBackgroundObjects[1].width, element.position.y);
+                        objectInFront_1 = 1;
+                    }
+                }
+                if (_this.animatedBackgroundObjects[index_1].position.x < 0) {
+                    LevelTracker.SetBackgroundMistLastXPosition(_this.animatedBackgroundObjects[index_1].position);
                 }
                 index_1++;
             });
         }
         this.basketFronts.position.set(this.baskets.position.x, this.baskets.position.y);
+        this.baskets.forEach(function (basket) {
+            basket.setTextPosition(this.baskets.position.x + basket.x, this.baskets.position.y + basket.y + 100);
+        }, this);
         this.UpdateOverride();
         this.UpdateUI();
     };
@@ -732,6 +752,7 @@ var BaseLevel = (function (_super) {
     };
     BaseLevel.prototype.AddGroups = function () {
         this.background = this.game.add.group();
+        this.particles = this.game.add.group();
         this.clickSpawner = this.game.add.group();
         this.baskets = this.game.add.group();
         this.blobs = this.game.add.group();
@@ -780,15 +801,30 @@ var BaseLevel = (function (_super) {
         this.cannotSpawnIcon.alpha = 0.5;
         this.levelGUI.add(this.canSpawnIcon);
         this.levelGUI.add(this.cannotSpawnIcon);
-        var nm = LevelTracker.GetLevelsCompletedInARow();
-        //Run the world build animation every (10) levels.
-        if (this.levelIndex % (10) === 0 || nm === 0) {
-            console.log("Build!");
-            this.buildWorldLevel(this.baskets, this.basketFronts, undefined, this.backgroundFromButtom, undefined, undefined, this.backgroundFromTop);
+        // Slide the baskets into the playing field.
+        this.baskets.position.set(1000, 0);
+        var basketsTween = this.baskets.game.add.tween(this.baskets).
+            to({ x: 0 }, 3500, Phaser.Easing.Exponential.Out, true);
+        var lvlsInARow = LevelTracker.GetLevelsCompletedInARow();
+        //Run the world build animation if player came from menu.
+        if (lvlsInARow === 0) {
+            this.buildWorldLevel(undefined, this.backgroundFromButtom, undefined, undefined, this.backgroundFromTop);
         }
     };
     BaseLevel.prototype.BuildBackground = function () {
         //let spriteKey =  "backgroundFront"; //(this.levelInfo.Settings.backgroundSpriteKey == "default") ? "background" : this.levelInfo.Settings.backgroundSpriteKey;  
+        this.leafParticle = this.game.add.emitter(500, 0, 6);
+        this.leafParticle.minParticleSpeed.setTo(-160, 265);
+        this.leafParticle.maxParticleSpeed.setTo(-100, 280);
+        this.leafParticle.minParticleScale = 0.2;
+        this.leafParticle.maxParticleScale = 0.3;
+        this.leafParticle.width = 1200;
+        this.leafParticle.particleDrag.set(45, 185);
+        this.leafParticle.maxRotation = -220;
+        this.leafParticle.minRotation = 150;
+        this.leafParticle.angularDrag = 65;
+        this.leafParticle.makeParticles(["leaf2", "leaf1"]);
+        this.leafParticle.flow(4000, 1300, 1, -1, true);
         var backgroundFront = this.game.add.sprite(0, 0, "backgroundFront");
         backgroundFront.z = 0;
         var backgroundTree = this.game.add.sprite(30, 111, "backgroundTree");
@@ -797,9 +833,11 @@ var BaseLevel = (function (_super) {
         backgroundTree.z = 2;
         var background1 = this.game.add.sprite(0, 0, "background1");
         background1.z = 3;
-        var backMist1 = this.game.add.sprite(0, 0, "blueMist");
+        this.animatedBackgroundObjects = [];
+        var FronMistLocation = LevelTracker.GetBackgroundMistLastXPosition();
+        var backMist1 = this.game.add.sprite(FronMistLocation.x, FronMistLocation.y, "blueMist");
         this.animatedBackgroundObjects.push(backMist1);
-        var backMist2 = this.game.add.sprite(backMist1.width - 0.2, 0, "blueMist");
+        var backMist2 = this.game.add.sprite(backMist1.position.x + backMist1.width - 0.2, FronMistLocation.y, "blueMist");
         this.animatedBackgroundObjects.push(backMist2);
         var background2 = this.game.add.sprite(0, 0, "background2");
         background2.z = 4;
@@ -813,8 +851,9 @@ var BaseLevel = (function (_super) {
         this.background.add(backMist1);
         this.background.add(backMist2);
         this.background.add(backgroundTree);
-        this.background.add(backgroundTreeFront);
         this.background.add(backgroundFront);
+        this.background.add(this.leafParticle);
+        this.background.add(backgroundTreeFront);
         this.background.add(mathman);
         this.backgroundFromButtom = [backgroundFront, background1, background2];
         this.backgroundFromTop = [backgroundTree, backgroundTreeFront, mathman];
@@ -902,18 +941,12 @@ var BaseLevel = (function (_super) {
             console.log("Max level reached!");
         }
     };
-    BaseLevel.prototype.buildWorldLevel = function (baskets, basketFronts, spritesToFadeIn, spritesToBuildFromBottom, spritesToBuildFromRight, spritesToBuildFromLeft, spritesToBuildFromAbove) {
+    BaseLevel.prototype.buildWorldLevel = function (spritesToFadeIn, spritesToBuildFromBottom, spritesToBuildFromRight, spritesToBuildFromLeft, spritesToBuildFromAbove) {
         var _this = this;
         var delayMod = 400;
         var reductionMod = 20;
         var reductionFactor = 0;
         var delay = 0;
-        var basketFrontOldPosX = basketFronts.position.x;
-        var basketsOldPosX = baskets.position.x;
-        baskets.position.set(1000, 0);
-        basketFronts.position.set(1000, 0);
-        var basketsTween = baskets.game.add.tween(baskets).
-            to({ x: 0 }, basketsOldPosX, Phaser.Easing.Circular.Out, true, 1000);
         if (spritesToBuildFromBottom) {
             spritesToBuildFromBottom.forEach(function (sprite) {
                 var oldPos = sprite.position.y;
@@ -963,30 +996,18 @@ var BaseLevel = (function (_super) {
             });
         }
     };
-    BaseLevel.prototype.buildWorldAnimation = function (backgroundSprites, baskets) {
-        var _this = this;
-        var delayMod = 400;
-        var reductionFactor = 0;
-        var delay = 0;
-        baskets.position.set(1000, 0);
-        setVisibility(false);
-        var spriteTween = baskets.game.add.tween(baskets).
-            to({ x: 0 }, 1000, Phaser.Easing.Circular.Out, true, delay).onComplete.addOnce(setVisibility.bind(true, this));
-        backgroundSprites.forEach(function (sprite) {
-            var oldPos = sprite.position.y;
-            sprite.position.set(sprite.position.x, _this.game.width);
-            var spriteTween = sprite.game.add.tween(sprite).
-                to({ y: _this.game.height - sprite.height }, 300, Phaser.Easing.Circular.Out, true, delay).onStart.addOnce(playSound);
-            delay += delayMod - reductionFactor;
-            reductionFactor += 50;
-        });
-        function playSound() {
-            //harshNumberMoveSound.play();
+    BaseLevel.prototype.slideBasketsAnimation = function (functionToRunOnComplete) {
+        if (functionToRunOnComplete) {
+            var blobsTween = this.blobs.game.add.tween(this.blobs).
+                to({ x: -1000 }, 1000, Phaser.Easing.Circular.Out, true, 1000);
+            var basketsTween = this.baskets.game.add.tween(this.baskets).
+                to({ x: -1000 }, 1000, Phaser.Easing.Circular.Out, true, 1000).onComplete.addOnce(functionToRunOnComplete);
         }
-        function setVisibility(visible) {
-            baskets.forEach(function (element) {
-                element.show = visible;
-            });
+        else {
+            var blobsTween = this.blobs.game.add.tween(this.blobs).
+                to({ x: -1000 }, 1000, Phaser.Easing.Circular.Out, true, 1000);
+            var basketsTween = this.baskets.game.add.tween(this.baskets).
+                to({ x: -1000 }, 1000, Phaser.Easing.Circular.Out, true, 1000);
         }
     };
     return BaseLevel;
@@ -1356,6 +1377,15 @@ var LevelTracker = (function () {
     };
     LevelTracker.GetLevelsCompletedInARow = function () {
         return this.levelsCompletedInARow;
+    };
+    LevelTracker.SetBackgroundMistLastXPosition = function (position) {
+        this.backgroundMistLastPosition = position;
+    };
+    LevelTracker.GetBackgroundMistLastXPosition = function () {
+        if (this.backgroundMistLastPosition !== undefined)
+            return this.backgroundMistLastPosition;
+        else
+            return new Phaser.Point(0, 0);
     };
     LevelTracker.levelsCompletedInARow = 0;
     LevelTracker.lastLevelPage = 0;
