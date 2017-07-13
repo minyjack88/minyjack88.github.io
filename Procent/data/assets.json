@@ -1,0 +1,139 @@
+{
+  "colliderAssets": [
+    {
+      "key": "basketPolygon",
+      "url": "physics/basket.json"
+    },
+    {
+      "key": "branchPolygon",
+      "url": "physics/branch.json"
+    }
+  ],
+  "spriteAssets": [
+    {
+      "key": "backgroundFront",
+      "url": "media/percentageGameSprites/background/front.png"
+    },
+    {
+      "key": "backgroundTree",
+      "url": "media/percentageGameSprites/background/tree.png"
+    },
+    {
+      "key": "backgroundTreeFront",
+      "url": "media/percentageGameSprites/background/treeFront.png"
+    },
+    {
+      "key": "background1",
+      "url": "media/percentageGameSprites/background/bg1.png"
+    },
+    {
+      "key": "background2",
+      "url": "media/percentageGameSprites/background/bg2.png"
+    },
+    {
+      "key": "background3",
+      "url": "media/percentageGameSprites/background/bg3.png"
+    },
+    {
+      "key": "blueMist",
+      "url": "media/percentageGameSprites/background/blueMist.png"
+    },
+    {
+      "key": "spawner",
+      "url": "media/Spawner.png"
+    },
+    {
+      "key": "basket",
+      "url": "media/percentageGameSprites/Basket.png"
+    },
+    {
+      "key": "basketFront",
+      "url": "media/percentageGameSprites/BasketFront.png"
+    },
+    {
+      "key": "smallerBlob",
+      "url": "media/SmallerBlob.png"
+    },
+    {
+      "key": "branch",
+      "url": "media/Branch.png"
+    },
+    {
+      "key": "playButton",
+      "url": "media/PlayButton.png"
+    },
+    {
+      "key": "blobAmountUI",
+      "url": "media/Fruit2.png"
+    },
+    {
+      "key": "cross",
+      "url": "media/percentageGameSprites/cross.png"
+    },
+    {
+      "key": "Empty",
+      "url": "media/Empty.png"
+    },
+    {
+      "key": "buttonBackground",
+      "url": "media/levelSelect/buttonBackground.png"
+    },
+    {
+      "key": "buttonBackground2",
+      "url": "media/levelSelect/buttonBackground2.png"
+    },
+    {
+      "key": "buttonArrowTest",
+      "url": "media/btnArrowTest.png"
+    },
+    {
+      "key": "cannotSpawn",
+      "url": "media/percentageGameSprites/Fruit1Arrow.png"
+    },
+    {
+      "key": "blob",
+      "url": "media/percentageGameSprites/Fruit1.png"
+    },
+    {
+      "key": "fruit2",
+      "url": "media/percentageGameSprites/fruit2.png"
+    },
+    {
+      "key": "fruit3",
+      "url": "media/percentageGameSprites/fruit3.png"
+    },
+    {
+      "key": "fruit4",
+      "url": "media/percentageGameSprites/fruit4.png"
+    },
+    {
+      "key": "leaf1",
+      "url": "media/percentageGameSprites/leaf1.png"
+    },
+    {
+      "key": "leaf2",
+      "url": "media/percentageGameSprites/leaf2.png"
+    },
+    {
+      "key": "mathman",
+      "url": "media/percentageGameSprites/mathman.png"
+    }
+
+  ],
+  "audioAssets": [
+    {
+      "key": "mana",
+      "url": "media/audio/Mana.mp3"
+    }
+  ],
+  "spriteSheetAssets": [
+    {
+      "key": "playButton",
+      "url": "media/PlayButton.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "framesTotal": 3,
+      "loadAllFrames": true
+    }
+  ]
+}
