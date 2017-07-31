@@ -1,0 +1,53 @@
+{
+  "spriteAssets": 
+  [
+    {
+      "key" : "hierarchyHoverOff",
+      "url" : "media/1.png"
+    },
+    {
+      "key" : "hierarchyHoverOn",
+      "url" : "media/1hover.png"
+    },
+    {
+      "key" : "percentageHoverOff",
+      "url" : "media/2.png"
+    },
+    {
+      "key" : "percentageHoverOn",
+      "url" : "media/2hover.png"
+    },
+    {
+      "key" : "functionHoverOff",
+      "url" : "media/3.png"
+    },
+    {
+      "key" : "functionHoverOn",
+      "url" : "media/3hover.png"
+    },
+    {
+      "key" : "equationHoverOff",
+      "url" : "media/4.png"
+    },
+    {
+      "key" : "equationHoverOn",
+      "url" : "media/4hover.png"
+    },
+    {
+      "key" : "background",
+      "url" : "media/bg.png"
+    },
+    {
+      "key" : "pointingMan",
+      "url" : "media/man.png"
+    },
+    {
+      "key" : "speakerOn",
+      "url" : "media/speakerOn.png"
+    },
+    {
+      "key" : "speakerOff",
+      "url" : "media/speakerOff.png"
+    }
+  ]
+}

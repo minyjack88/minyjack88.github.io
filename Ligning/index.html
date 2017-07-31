@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Viden Djurs Mat</title>
+    <script src="lib/pixi.min.js"></script>
+    <script src="lib/p2.min.js"></script>
+    <script src="lib/phaser.min.js"></script>
+    <script src="polyfill.js"></script>
+    <script src="game.js"></script>
+
+</head>
+
+<body style="margin: 0; padding: 0;">
+    <div id="gameDiv" style="width: 960px; margin: 50px auto;"></div>
+    <script>
+        window.__Game__DEBUG = true;
+        window.DebugLevelSkip = {
+            skipLevel: false,
+            gameMode: "equation",
+            levelIndex: 13,
+        };
+        window.onload = function () {
+            StartUp.Init();
+        }
+    </script>
+<script type="text/javascript" src="game.352ab2a597f0138459a6.js"></script></body>
+
+</html>
