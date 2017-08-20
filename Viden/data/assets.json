@@ -1,0 +1,85 @@
+{
+  "spriteAssets": 
+  [
+    {
+      "key" : "hierarchyHoverOff",
+      "url" : "media/gameSelect/1.png"
+    },
+    {
+      "key" : "hierarchyHoverOn",
+      "url" : "media/gameSelect/1hover.png"
+    },
+    {
+      "key" : "percentageHoverOff",
+      "url" : "media/gameSelect/2.png"
+    },
+    {
+      "key" : "percentageHoverOn",
+      "url" : "media/gameSelect/2hover.png"
+    },
+    {
+      "key" : "functionHoverOff",
+      "url" : "media/gameSelect/3.png"
+    },
+    {
+      "key" : "functionHoverOn",
+      "url" : "media/gameSelect/3hover.png"
+    },
+    {
+      "key" : "equationHoverOff",
+      "url" : "media/gameSelect/4.png"
+    },
+    {
+      "key" : "equationHoverOn",
+      "url" : "media/gameSelect/4hover.png"
+    },
+    {
+      "key" : "background",
+      "url" : "media/gameSelect/bg.png"
+    },
+    {
+      "key" : "pointingMan",
+      "url" : "media/gameSelect/man.png"
+    },
+    {
+      "key" : "speakerOn",
+      "url" : "media/shared/speakerOn.png"
+    },
+    {
+      "key" : "speakerOff",
+      "url" : "media/shared/speakerOff.png"
+    },
+    {
+      "key" : "cursorClick",
+      "url" : "media/shared/cursorClick.png"
+    },
+    {
+      "key" : "cursorHover",
+      "url" : "media/shared/cursorHover.png"
+    },
+    {
+      "key" : "cursorNormal",
+      "url" : "media/shared/cursorNormal.png"
+    },
+    {
+      "key" : "levelSelectBackground",
+      "url" : "media/shared/lvlbg.png"
+    }
+  ],
+  "spritesheetAssets": [
+    {
+      "key": "loadingScreen1",
+      "url": "media/shared/load1.png",
+      "frameWidth": 376,
+      "frameHeight": 516,
+      "framesTotal": 12
+    },
+    {
+      "key": "loadingScreen2",
+      "url": "media/shared/load2.png",
+      "frameWidth": 363,
+      "frameHeight": 455,
+      "framesTotal": 15
+    }
+  ]
+}

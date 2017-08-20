@@ -1,0 +1,1376 @@
+{
+  "globalSettings": {
+    "audio": "default",
+    "slotPieceTextFont": "Amaranth",
+    "slotPieceTextSize": 52,
+    "slotPlaceRange": 80,
+    "slotScale": {
+      "x": 0.45,
+      "y": 0.45
+    },
+    "slotInnerTextSize": 64,
+    "slotInnerFont": "Amaranth",
+    "equationTextFont": "Amaranth",
+    "equationTextSize": 48,
+    "ropeManOffset": [
+      {
+        "x": 0,
+        "y": 55
+      },
+      {
+        "x": 15,
+        "y": 70
+      },
+      {
+        "x": 15,
+        "y": 70
+      },
+      {
+        "x": 25,
+        "y": 70
+      },
+      {
+        "x": 30,
+        "y": 70
+      },
+      {
+        "x": 25,
+        "y": 70
+      },
+      {
+        "x": 15,
+        "y": 70
+      }
+    ]
+  },
+  "levels": [
+    {
+      "slotARelativePosition": {
+        "x": 90,
+        "y": -4
+      },
+      "slotBRelativePosition": {
+        "x": 70,
+        "y": -6
+      },
+      "prefixTextPosition": {
+        "x": 130,
+        "y": 190
+      },
+      "affixTextPosition": {
+        "x": 330,
+        "y": 190
+      },
+      "aValue": 1,
+      "bValue": 0,
+      "aValueLocked": false,
+      "bValueLocked": true,
+      "points": [
+        {
+          "x": -5,
+          "y": -5
+        },
+        {
+          "x": -3,
+          "y": -3
+        },
+        {
+          "x": -1,
+          "y": -1
+        },
+        {
+          "x": 1,
+          "y": 1
+        },
+        {
+          "x": 3,
+          "y": 3
+        },
+        {
+          "x": 5,
+          "y": 5
+        }
+      ],
+      "answers": [
+        2,
+        -1,
+        0.5,
+        1
+      ]
+    },
+    {
+      "slotARelativePosition": {
+        "x": 90,
+        "y": -4
+      },
+      "slotBRelativePosition": {
+        "x": 70,
+        "y": -6
+      },
+      "prefixTextPosition": {
+        "x": 130,
+        "y": 190
+      },
+      "affixTextPosition": {
+        "x": 330,
+        "y": 190
+      },
+      "aValue": 2,
+      "bValue": 0,
+      "aValueLocked": false,
+      "bValueLocked": true,
+      "points": [
+        {
+          "x": -2,
+          "y": -4
+        },
+        {
+          "x": -1,
+          "y": -2
+        },
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 2
+        },
+        {
+          "x": 2,
+          "y": 4
+        }
+      ],
+      "answers": [
+        -2.5,
+        2,
+        0,
+        -1.5
+      ]
+    },
+    {
+      "slotARelativePosition": {
+        "x": 90,
+        "y": -4
+      },
+      "slotBRelativePosition": {
+        "x": 70,
+        "y": -6
+      },
+      "prefixTextPosition": {
+        "x": 130,
+        "y": 190
+      },
+      "affixTextPosition": {
+        "x": 330,
+        "y": 190
+      },
+      "aValue": -0.5,
+      "bValue": 0,
+      "aValueLocked": false,
+      "bValueLocked": true,
+      "points": [
+        {
+          "x": -5,
+          "y": 2.5
+        },
+        {
+          "x": -3,
+          "y": 1.5
+        },
+        {
+          "x": -1,
+          "y": 0.5
+        },
+        {
+          "x": 1,
+          "y": -0.5
+        },
+        {
+          "x": 3,
+          "y": -1.5
+        },
+        {
+          "x": 5,
+          "y": -2.5
+        }
+      ],
+      "answers": [
+        2.5,
+        1.5,
+        -0.5,
+        -2
+      ]
+    },
+    {
+      "slotARelativePosition": {
+        "x": 90,
+        "y": -4
+      },
+      "slotBRelativePosition": {
+        "x": 70,
+        "y": -6
+      },
+      "prefixTextPosition": {
+        "x": 130,
+        "y": 190
+      },
+      "affixTextPosition": {
+        "x": 330,
+        "y": 190
+      },
+      "aValue": 1.5,
+      "bValue": 0,
+      "aValueLocked": false,
+      "bValueLocked": true,
+      "points": [
+        {
+          "x": -3,
+          "y": -4.5
+        },
+        {
+          "x": -2,
+          "y": -3
+        },
+        {
+          "x": -1,
+          "y": -1.5
+        },
+        {
+          "x": 1,
+          "y": 1.5
+        },
+        {
+          "x": 2,
+          "y": 3
+        },
+        {
+          "x": 3,
+          "y": 4.5
+        }
+      ],
+      "answers": [
+        1.5,
+        -1.5,
+        2,
+        -0.5
+      ]
+    },
+    {
+      "slotARelativePosition": {
+        "x": 90,
+        "y": -4
+      },
+      "slotBRelativePosition": {
+        "x": 70,
+        "y": -6
+      },
+      "prefixTextPosition": {
+        "x": 130,
+        "y": 190
+      },
+      "affixTextPosition": {
+        "x": 330,
+        "y": 190
+      },
+      "aValue": 0,
+      "bValue": 0,
+      "aValueLocked": false,
+      "bValueLocked": true,
+      "points": [
+        {
+          "x": -5,
+          "y": 0
+        },
+        {
+          "x": -3,
+          "y": 0
+        },
+        {
+          "x": -1,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 3,
+          "y": 0
+        },
+        {
+          "x": 5,
+          "y": 0
+        }
+      ],
+      "answers": [
+        0,
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "slotARelativePosition": {
+        "x": 90,
+        "y": -4
+      },
+      "slotBRelativePosition": {
+        "x": 70,
+        "y": -6
+      },
+      "prefixTextPosition": {
+        "x": 130,
+        "y": 190
+      },
+      "affixTextPosition": {
+        "x": 330,
+        "y": 190
+      },
+      "aValue": -1,
+      "bValue": 0,
+      "aValueLocked": false,
+      "bValueLocked": true,
+      "points": [
+        {
+          "x": -5,
+          "y": 5
+        },
+        {
+          "x": -3,
+          "y": 3
+        },
+        {
+          "x": -1,
+          "y": 1
+        },
+        {
+          "x": 1,
+          "y": -1
+        },
+        {
+          "x": 3,
+          "y": -3
+        },
+        {
+          "x": 5,
+          "y": -5
+        }
+      ],
+      "answers": [
+        -2.5,
+        -1,
+        2,
+        2.5
+      ]
+    },
+    {
+      "slotARelativePosition": {
+        "x": 90,
+        "y": -4
+      },
+      "slotBRelativePosition": {
+        "x": 70,
+        "y": -6
+      },
+      "prefixTextPosition": {
+        "x": 130,
+        "y": 190
+      },
+      "affixTextPosition": {
+        "x": 330,
+        "y": 190
+      },
+      "aValue": 2.5,
+      "bValue": 0,
+      "aValueLocked": false,
+      "bValueLocked": true,
+      "points": [
+        {
+          "x": -2,
+          "y": -5
+        },
+        {
+          "x": -1,
+          "y": -2.5
+        },
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 2.5
+        },
+        {
+          "x": 2,
+          "y": 5
+        }
+      ],
+      "answers": [
+        0,
+        1,
+        1.5,
+        2.5
+      ]
+    },
+    {
+      "slotARelativePosition": {
+        "x": 90,
+        "y": -4
+      },
+      "slotBRelativePosition": {
+        "x": 70,
+        "y": -6
+      },
+      "prefixTextPosition": {
+        "x": 130,
+        "y": 190
+      },
+      "affixTextPosition": {
+        "x": 330,
+        "y": 190
+      },
+      "aValue": -2,
+      "bValue": 0,
+      "aValueLocked": false,
+      "bValueLocked": true,
+      "points": [
+        {
+          "x": -2,
+          "y": 4
+        },
+        {
+          "x": -1,
+          "y": 2
+        },
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": -2
+        },
+        {
+          "x": 2,
+          "y": -4
+        }
+      ],
+      "answers": [
+        -2,
+        1,
+        0.5,
+        -1.5
+      ]
+    },
+    {
+      "slotARelativePosition": {
+        "x": 90,
+        "y": -4
+      },
+      "slotBRelativePosition": {
+        "x": 70,
+        "y": -6
+      },
+      "prefixTextPosition": {
+        "x": 130,
+        "y": 190
+      },
+      "affixTextPosition": {
+        "x": 330,
+        "y": 190
+      },
+      "aValue": 0.5,
+      "bValue": 0,
+      "aValueLocked": false,
+      "bValueLocked": true,
+      "points": [
+        {
+          "x": -5,
+          "y": -2.5
+        },
+        {
+          "x": -3,
+          "y": -1.5
+        },
+        {
+          "x": -1,
+          "y": -0.5
+        },
+        {
+          "x": 1,
+          "y": 0.5
+        },
+        {
+          "x": 3,
+          "y": 1.5
+        },
+        {
+          "x": 5,
+          "y": 2.5
+        }
+      ],
+      "answers": [
+        1.5,
+        0,
+        0.5,
+        -1
+      ]
+    },
+    {
+      "slotARelativePosition": {
+        "x": 90,
+        "y": -4
+      },
+      "slotBRelativePosition": {
+        "x": 70,
+        "y": -6
+      },
+      "prefixTextPosition": {
+        "x": 130,
+        "y": 190
+      },
+      "affixTextPosition": {
+        "x": 330,
+        "y": 190
+      },
+      "aValue": -1.5,
+      "bValue": 0,
+      "aValueLocked": false,
+      "bValueLocked": true,
+      "points": [
+        {
+          "x": -3,
+          "y": 4.5
+        },
+        {
+          "x": -2,
+          "y": 3
+        },
+        {
+          "x": -1,
+          "y": 1.5
+        },
+        {
+          "x": 1,
+          "y": -1.5
+        },
+        {
+          "x": 2,
+          "y": -3
+        },
+        {
+          "x": 3,
+          "y": -4.5
+        }
+      ],
+      "answers": [
+        0,
+        -1.5,
+        0.5,
+        -2.5
+      ]
+    },
+    {
+      "slotARelativePosition": {
+        "x": 85,
+        "y": -4
+      },
+      "slotBRelativePosition": {
+        "x": 110,
+        "y": -4
+      },
+      "prefixTextPosition": {
+        "x": 95,
+        "y": 190
+      },
+      "affixTextPosition": {
+        "x": 270,
+        "y": 190
+      },
+      "aValue": 0.5,
+      "bValue": 2,
+      "aValueLocked": true,
+      "bValueLocked": false,
+      "points": [
+        {
+          "x": -5,
+          "y": -0.5
+        },
+        {
+          "x": 0,
+          "y": 2
+        },
+        {
+          "x": 5,
+          "y": 4.5
+        }
+      ],
+      "answers": [
+        2,
+        1,
+        -2,
+        0
+      ]
+    },
+    {
+      "slotARelativePosition": {
+        "x": 85,
+        "y": -4
+      },
+      "slotBRelativePosition": {
+        "x": 110,
+        "y": -4
+      },
+      "prefixTextPosition": {
+        "x": 95,
+        "y": 190
+      },
+      "affixTextPosition": {
+        "x": 270,
+        "y": 190
+      },
+      "aValue": 0.5,
+      "bValue": 1.5,
+      "aValueLocked": true,
+      "bValueLocked": false,
+      "points": [
+        {
+          "x": -5,
+          "y": -1
+        },
+        {
+          "x": 0,
+          "y": 1.5
+        },
+        {
+          "x": 5,
+          "y": 4
+        }
+      ],
+      "answers": [
+        0.5,
+        -2.5,
+        -1,
+        1.5
+      ]
+    },
+    {
+      "slotARelativePosition": {
+        "x": 85,
+        "y": -4
+      },
+      "slotBRelativePosition": {
+        "x": 110,
+        "y": -4
+      },
+      "prefixTextPosition": {
+        "x": 95,
+        "y": 190
+      },
+      "affixTextPosition": {
+        "x": 270,
+        "y": 190
+      },
+      "aValue": 0.5,
+      "bValue": -1.5,
+      "aValueLocked": true,
+      "bValueLocked": false,
+      "points": [
+        {
+          "x": -5,
+          "y": -4
+        },
+        {
+          "x": 0,
+          "y": -1.5
+        },
+        {
+          "x": 5,
+          "y": 1
+        }
+      ],
+      "answers": [
+        1.5,
+        -1.5,
+        -2,
+        -0.5
+      ]
+    },
+    {
+      "slotARelativePosition": {
+        "x": 85,
+        "y": -4
+      },
+      "slotBRelativePosition": {
+        "x": 110,
+        "y": -4
+      },
+      "prefixTextPosition": {
+        "x": 95,
+        "y": 190
+      },
+      "affixTextPosition": {
+        "x": 270,
+        "y": 190
+      },
+      "aValue": 0.5,
+      "bValue": 1,
+      "aValueLocked": true,
+      "bValueLocked": false,
+      "points": [
+        {
+          "x": -5,
+          "y": -1.5
+        },
+        {
+          "x": 0,
+          "y": 1
+        },
+        {
+          "x": 5,
+          "y": 3.5
+        }
+      ],
+      "answers": [
+        1,
+        2,
+        -1,
+        2.5
+      ]
+    },
+    {
+      "slotARelativePosition": {
+        "x": 85,
+        "y": -4
+      },
+      "slotBRelativePosition": {
+        "x": 110,
+        "y": -4
+      },
+      "prefixTextPosition": {
+        "x": 95,
+        "y": 190
+      },
+      "affixTextPosition": {
+        "x": 270,
+        "y": 190
+      },
+      "aValue": 0.5,
+      "bValue": 2.5,
+      "aValueLocked": true,
+      "bValueLocked": false,
+      "points": [
+        {
+          "x": -5,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 2.5
+        },
+        {
+          "x": 5,
+          "y": 5
+        }
+      ],
+      "answers": [
+        2,
+        1.5,
+        2.5,
+        -1.5
+      ]
+    },
+    {
+      "slotARelativePosition": {
+        "x": 85,
+        "y": -4
+      },
+      "slotBRelativePosition": {
+        "x": 110,
+        "y": -4
+      },
+      "prefixTextPosition": {
+        "x": 95,
+        "y": 190
+      },
+      "affixTextPosition": {
+        "x": 270,
+        "y": 190
+      },
+      "aValue": 0.5,
+      "bValue": -1,
+      "aValueLocked": true,
+      "bValueLocked": false,
+      "points": [
+        {
+          "x": -5,
+          "y": -3.5
+        },
+        {
+          "x": 0,
+          "y": -1
+        },
+        {
+          "x": 5,
+          "y": 1.5
+        }
+      ],
+      "answers": [
+        -2,
+        -2.5,
+        -1,
+        0
+      ]
+    },
+    {
+      "slotARelativePosition": {
+        "x": 85,
+        "y": -4
+      },
+      "slotBRelativePosition": {
+        "x": 110,
+        "y": -4
+      },
+      "prefixTextPosition": {
+        "x": 95,
+        "y": 190
+      },
+      "affixTextPosition": {
+        "x": 270,
+        "y": 190
+      },
+      "aValue": 0.5,
+      "bValue": -0.5,
+      "aValueLocked": true,
+      "bValueLocked": false,
+      "points": [
+        {
+          "x": -5,
+          "y": -3
+        },
+        {
+          "x": 0,
+          "y": -0.5
+        },
+        {
+          "x": 5,
+          "y": 2
+        }
+      ],
+      "answers": [
+        2.5,
+        -0.5,
+        -1.5,
+        1
+      ]
+    },
+    {
+      "slotARelativePosition": {
+        "x": 85,
+        "y": -4
+      },
+      "slotBRelativePosition": {
+        "x": 110,
+        "y": -4
+      },
+      "prefixTextPosition": {
+        "x": 95,
+        "y": 190
+      },
+      "affixTextPosition": {
+        "x": 270,
+        "y": 190
+      },
+      "aValue": 0.5,
+      "bValue": 0,
+      "aValueLocked": true,
+      "bValueLocked": false,
+      "points": [
+        {
+          "x": -5,
+          "y": -2.5
+        },
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 5,
+          "y": 2.5
+        }
+      ],
+      "answers": [
+        2,
+        1.5,
+        0,
+        -2
+      ]
+    },
+    {
+      "slotARelativePosition": {
+        "x": 85,
+        "y": -4
+      },
+      "slotBRelativePosition": {
+        "x": 110,
+        "y": -4
+      },
+      "prefixTextPosition": {
+        "x": 95,
+        "y": 190
+      },
+      "affixTextPosition": {
+        "x": 270,
+        "y": 190
+      },
+      "aValue": 0.5,
+      "bValue": -2,
+      "aValueLocked": true,
+      "bValueLocked": false,
+      "points": [
+        {
+          "x": -5,
+          "y": -4.5
+        },
+        {
+          "x": 0,
+          "y": -2
+        },
+        {
+          "x": 5,
+          "y": 0.5
+        }
+      ],
+      "answers": [
+        2,
+        1,
+        -1,
+        -2
+      ]
+    },
+    {
+      "slotARelativePosition": {
+        "x": 85,
+        "y": -4
+      },
+      "slotBRelativePosition": {
+        "x": 110,
+        "y": -4
+      },
+      "prefixTextPosition": {
+        "x": 95,
+        "y": 190
+      },
+      "affixTextPosition": {
+        "x": 270,
+        "y": 190
+      },
+      "aValue": 0.5,
+      "bValue": -2.5,
+      "aValueLocked": true,
+      "bValueLocked": false,
+      "points": [
+        {
+          "x": -5,
+          "y": -5
+        },
+        {
+          "x": 0,
+          "y": -2.5
+        },
+        {
+          "x": 5,
+          "y": 0
+        }
+      ],
+      "answers": [
+        -2.5,
+        -1.5,
+        0.5,
+        0
+      ]
+    },
+    {
+      "slotARelativePosition": {
+        "x": 105,
+        "y": -4
+      },
+      "slotBRelativePosition": {
+        "x": 105,
+        "y": -4
+      },
+      "prefixTextPosition": {
+        "x": 80,
+        "y": 190
+      },
+      "affixTextPosition": {
+        "x": 290,
+        "y": 190
+      },
+      "aValue": -1.5,
+      "bValue": -2.5,
+      "aValueLocked": false,
+      "bValueLocked": false,
+      "points": [
+        {
+          "x": 1,
+          "y": -4
+        },
+        {
+          "x": -3,
+          "y": 2
+        }
+      ],
+      "answers": [
+        -1.5,
+        1,
+        -2.5,
+        0.5
+      ]
+    },
+    {
+      "slotARelativePosition": {
+        "x": 105,
+        "y": -4
+      },
+      "slotBRelativePosition": {
+        "x": 105,
+        "y": -4
+      },
+      "prefixTextPosition": {
+        "x": 80,
+        "y": 190
+      },
+      "affixTextPosition": {
+        "x": 290,
+        "y": 190
+      },
+      "aValue": 1.5,
+      "bValue": -2,
+      "aValueLocked": false,
+      "bValueLocked": false,
+      "points": [
+        {
+          "x": -2,
+          "y": -5
+        },
+        {
+          "x": 4,
+          "y": 4
+        }
+      ],
+      "answers": [
+        2,
+        -1,
+        1.5,
+        -2
+      ]
+    },
+    {
+      "slotARelativePosition": {
+        "x": 105,
+        "y": -4
+      },
+      "slotBRelativePosition": {
+        "x": 105,
+        "y": -4
+      },
+      "prefixTextPosition": {
+        "x": 80,
+        "y": 190
+      },
+      "affixTextPosition": {
+        "x": 290,
+        "y": 190
+      },
+      "aValue": 1,
+      "bValue": 0.5,
+      "aValueLocked": false,
+      "bValueLocked": false,
+      "points": [
+        {
+          "x": -3,
+          "y": -2.5
+        },
+        {
+          "x": 3,
+          "y": 3.5
+        }
+      ],
+      "answers": [
+        1,
+        0.5,
+        0,
+        -0.5
+      ]
+    },
+    {
+      "slotARelativePosition": {
+        "x": 105,
+        "y": -4
+      },
+      "slotBRelativePosition": {
+        "x": 105,
+        "y": -4
+      },
+      "prefixTextPosition": {
+        "x": 80,
+        "y": 190
+      },
+      "affixTextPosition": {
+        "x": 290,
+        "y": 190
+      },
+      "aValue": -2.5,
+      "bValue": -1.5,
+      "aValueLocked": false,
+      "bValueLocked": false,
+      "points": [
+        {
+          "x": -2,
+          "y": 3.5
+        },
+        {
+          "x": 1,
+          "y": -4
+        }
+      ],
+      "answers": [
+        2.5,
+        -2.5,
+        -1.5,
+        2
+      ]
+    },
+    {
+      "slotARelativePosition": {
+        "x": 105,
+        "y": -4
+      },
+      "slotBRelativePosition": {
+        "x": 105,
+        "y": -4
+      },
+      "prefixTextPosition": {
+        "x": 80,
+        "y": 190
+      },
+      "affixTextPosition": {
+        "x": 290,
+        "y": 190
+      },
+      "aValue": 2,
+      "bValue": -0.5,
+      "aValueLocked": false,
+      "bValueLocked": false,
+      "points": [
+        {
+          "x": -2,
+          "y": -4.5
+        },
+        {
+          "x": 2,
+          "y": 3.5
+        }
+      ],
+      "answers": [
+        -2.5,
+        2,
+        -0.5,
+        1
+      ]
+    },
+    {
+      "slotARelativePosition": {
+        "x": 105,
+        "y": -4
+      },
+      "slotBRelativePosition": {
+        "x": 105,
+        "y": -4
+      },
+      "prefixTextPosition": {
+        "x": 80,
+        "y": 190
+      },
+      "affixTextPosition": {
+        "x": 290,
+        "y": 190
+      },
+      "aValue": 0,
+      "bValue": 2.5,
+      "aValueLocked": false,
+      "bValueLocked": false,
+      "points": [
+        {
+          "x": -3,
+          "y": 2.5
+        },
+        {
+          "x": 4,
+          "y": 2.5
+        }
+      ],
+      "answers": [
+        1.5,
+        0,
+        -2,
+        2.5
+      ]
+    },
+    {
+      "slotARelativePosition": {
+        "x": 105,
+        "y": -4
+      },
+      "slotBRelativePosition": {
+        "x": 105,
+        "y": -4
+      },
+      "prefixTextPosition": {
+        "x": 80,
+        "y": 190
+      },
+      "affixTextPosition": {
+        "x": 290,
+        "y": 190
+      },
+      "aValue": 1.5,
+      "bValue": 1,
+      "aValueLocked": false,
+      "bValueLocked": false,
+      "points": [
+        {
+          "x": -2,
+          "y": -2
+        },
+        {
+          "x": 2,
+          "y": 4
+        }
+      ],
+      "answers": [
+        1.5,
+        0.5,
+        1,
+        -1.5
+      ]
+    },
+    {
+      "slotARelativePosition": {
+        "x": 105,
+        "y": -4
+      },
+      "slotBRelativePosition": {
+        "x": 105,
+        "y": -4
+      },
+      "prefixTextPosition": {
+        "x": 80,
+        "y": 190
+      },
+      "affixTextPosition": {
+        "x": 290,
+        "y": 190
+      },
+      "aValue": -2,
+      "bValue": -1,
+      "aValueLocked": false,
+      "bValueLocked": false,
+      "points": [
+        {
+          "x": -2,
+          "y": 3
+        },
+        {
+          "x": 2,
+          "y": -5
+        }
+      ],
+      "answers": [
+        -2,
+        2.5,
+        2,
+        -1
+      ]
+    },
+    {
+      "slotARelativePosition": {
+        "x": 105,
+        "y": -4
+      },
+      "slotBRelativePosition": {
+        "x": 105,
+        "y": -4
+      },
+      "prefixTextPosition": {
+        "x": 80,
+        "y": 190
+      },
+      "affixTextPosition": {
+        "x": 290,
+        "y": 190
+      },
+      "aValue": -1,
+      "bValue": 0.5,
+      "aValueLocked": false,
+      "bValueLocked": false,
+      "points": [
+        {
+          "x": -3,
+          "y": 3.5
+        },
+        {
+          "x": 4,
+          "y": -3.5
+        }
+      ],
+      "answers": [
+        1,
+        -0.5,
+        -1,
+        0.5
+      ]
+    },
+    {
+      "slotARelativePosition": {
+        "x": 105,
+        "y": -4
+      },
+      "slotBRelativePosition": {
+        "x": 105,
+        "y": -4
+      },
+      "prefixTextPosition": {
+        "x": 80,
+        "y": 190
+      },
+      "affixTextPosition": {
+        "x": 290,
+        "y": 190
+      },
+      "aValue": 2,
+      "bValue": -0.5,
+      "aValueLocked": false,
+      "bValueLocked": false,
+      "points": [
+        {
+          "x": -2,
+          "y": -4.5
+        },
+        {
+          "x": 2,
+          "y": 3.5
+        }
+      ],
+      "answers": [
+        2,
+        -0.5,
+        -2.5,
+        1.5
+      ]
+    }
+  ]
+}

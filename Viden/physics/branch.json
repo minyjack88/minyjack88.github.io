@@ -1,0 +1,26 @@
+{ 
+    
+    "branchPolygonData": [
+        
+        {
+            "density": 2, "friction": 0, "bounce": 0, 
+            "filter": { "categoryBits": 1, "maskBits": 65535 },
+            "shape": [   110, 44  ,  90, 38  ,  0, 0  ,  123, 0  ,  123, 24  ]
+        } ,
+        {
+            "density": 2, "friction": 0, "bounce": 0, 
+            "filter": { "categoryBits": 1, "maskBits": 65535 },
+            "shape": [   0, 26  ,  0, 0  ,  20, 29  ,  16, 32  ,  8, 32  ]
+        } ,
+        {
+            "density": 2, "friction": 0, "bounce": 0, 
+            "filter": { "categoryBits": 1, "maskBits": 65535 },
+            "shape": [   37, 46  ,  20, 29  ,  0, 0  ,  90, 38  ,  85, 47  ,  64, 54  ]
+        } ,
+        {
+            "density": 2, "friction": 0, "bounce": 0, 
+            "filter": { "categoryBits": 1, "maskBits": 65535 },
+            "shape": [   90, 38  ,  110, 44  ,  100, 44  ]
+        }
+    ]
+}

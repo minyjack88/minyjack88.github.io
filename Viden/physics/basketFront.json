@@ -1,0 +1,26 @@
+{ 
+    
+    "BasketFront": [
+        
+        {
+            "density": 2, "friction": 0.6, "bounce": 0, "isSensor":true, 
+            "filter": { "categoryBits": 1, "maskBits": 65535 },
+            "shape": [   356, 195  ,  56, 195  ,  25, 147  ,  94, 67  ,  323, 65  ,  389, 141  ]
+        } ,
+        {
+            "density": 2, "friction": 0.6, "bounce": 0, "isSensor":true, 
+            "filter": { "categoryBits": 1, "maskBits": 65535 },
+            "shape": [   75, 12  ,  347, 12  ,  323, 52  ,  92, 52  ,  68, 28  ]
+        } ,
+        {
+            "density": 2, "friction": 0.6, "bounce": 0, "isSensor":true, 
+            "filter": { "categoryBits": 1, "maskBits": 65535 },
+            "shape": [   323, 52  ,  347, 12  ,  350, 30  ]
+        } ,
+        {
+            "density": 2, "friction": 0.6, "bounce": 0, "isSensor":true, 
+            "filter": { "categoryBits": 1, "maskBits": 65535 },
+            "shape": [   323, 52  ,  323, 65  ,  94, 67  ,  92, 52  ]
+        }
+    ]
+}

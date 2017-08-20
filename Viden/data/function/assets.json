@@ -1,0 +1,128 @@
+{
+  "spriteAssets": 
+  [
+    {
+      "key": "grid",
+      "url": "media/function/Grid400x400.png"
+    },
+    {
+      "key": "gridPoint",
+      "url": "media/function/TestPoint.png"
+    },
+    {
+      "key": "bg1",
+      "url": "media/function/background/bg-1.png"
+    },
+     {
+      "key": "bg2",
+      "url": "media/function/background/bg-2.png"
+    },
+     {
+      "key": "bg3",
+      "url": "media/function/background/bg-3.png"
+    },
+     {
+      "key": "bg4",
+      "url": "media/function/background/bg-4.png"
+    },
+     {
+      "key": "bg5",
+      "url": "media/function/background/bg-5.png"
+    },
+    {
+      "key": "bg6",
+      "url": "media/function/background/bg-6.png"
+    },
+    {
+      "key": "bg7",
+      "url": "media/function/background/bg-7.png"
+    },
+    {
+      "key": "slotPiece",
+      "url": "media/function/empty46x46.png"
+    },
+    {
+      "key": "dropSquare",
+      "url": "media/function/DropSquare.png"
+    },
+    {
+      "key": "dropSquareLit",
+      "url": "media/function/DropSquareLit.png"
+    },
+    {
+      "key": "backButton",
+      "url": "media/shared/backButton.png"
+    },
+    {
+      "key": "snippet0",
+      "url": "media/function/levelSelect/snippet0.png"
+    },
+    {
+      "key": "snippetGrey0",
+      "url": "media/function/levelSelect/snippetGrey0.png"
+    },
+    {
+      "key": "snippet1",
+      "url": "media/function/levelSelect/snippet1.png"
+    },
+    {
+      "key": "snippetGrey1",
+      "url": "media/function/levelSelect/snippetGrey1.png"
+    },
+    {
+      "key": "snippet2",
+      "url": "media/function/levelSelect/snippet2.png"
+    },
+    {
+      "key": "snippetGrey2",
+      "url": "media/function/levelSelect/snippetGrey2.png"
+    },
+    {
+      "key": "snippet3",
+      "url": "media/function/levelSelect/snippet3.png"
+    },
+    {
+      "key": "snippetGrey3",
+      "url": "media/function/levelSelect/snippetGrey3.png"
+    },
+    {
+      "key": "buttonArrowTest",
+      "url": "media/shared/btnArrowTest.png"
+    },
+    {
+      "key": "Mist",
+      "url": "media/function/background/mist.png"
+    },
+    {
+      "key": "bird1",
+      "url": "media/function/background/bird-1.png"
+    },
+    {
+      "key": "bird2",
+      "url": "media/function/background/bird-2.png"
+    },
+    {
+      "key": "bird3",
+      "url": "media/function/background/bird-3.png"
+    },
+    {
+      "key": "rope",
+      "url": "media/function/rope.png"
+    }
+  ],
+  "audioAssets": [
+    {
+      "key": "mana",
+      "url": "media/function/audio/Mana.mp3"
+    }
+  ],
+   "spritesheetAssets": [
+    {
+      "key": "swingMan",
+      "url": "media/function/swingMan.png",
+      "frameWidth": 211,
+      "frameHeight": 192,
+      "framesTotal": 4
+    }
+  ]
+}
